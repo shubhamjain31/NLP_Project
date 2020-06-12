@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title%} Spam Classification {% endblock %}
+{% block body %}
+<br>
+
+<div class="container">
+	<section class="jumbotron text-center">
+	<div class="row">
+		<div class="col-sm-6">
+		<h1 class="jumbotron-heading">Spam Classification</h1>
+		<img src="{% static 'images/spam2.jpg' %}" alt="spam" class="img-thumbnail">
+          <p class="lead text-black"></p>
+         
+		</div>
+
+		<div class="col-sm-6">
+			<div class="container">
+				<form method="POST" action="/spam/">{% csrf_token %}
+					<textarea name="message" class="form-control" cols="8" rows="10" style="resize: none;"></textarea>
+					<br>
+					<button class="btn btn-success" type="submit">Analysis</button>
+
+					<button style="margin-left: 10px;" class="btn btn-danger" type="reset">Reset</button>
+
+				</form>
+			<br>
+
+			<div class="container">
+				{% if prediction == 0 %}
+					<div class="container">
+						<p class="alert alert-success"><b>Message is not Spam</b></p>
+					</div>
+				{% elif prediction == 1 %}
+					<div class="container">
+						<p class="alert alert-danger"><b>Message is Spam</b></p>
+					</div>
+				{% endif %}
+			</div>
+
+			</div>
+		</div>
+	</div>
+</section>
+
+</div>	
+	<!-- form area -->
+	
+
+{% endblock %}
