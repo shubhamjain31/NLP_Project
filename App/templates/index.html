@@ -9,6 +9,12 @@
         float: none; 
         margin-bottom: 10px; 
 }
+
+.jumbotron {
+        background-image: url('{% static 'images/nlp.jpeg' %}');
+        background-size: cover;
+        height: 100%;
+      }
 </style>
 {% endblock %}
 
@@ -16,8 +22,8 @@
 {% block body %}
 <div class="jumbotron jumbotron-fluid text-center">
       <div class="container">
-        <h1 class="display-4 text-info font-weight-bold">Natural Language Processing(NLP)</h1>
-        <p class="lead">Small Project on machine learning and data science</p>
+        <h1 class="display-4 text-white font-weight-bold">Natural Language Processing(NLP)</h1>
+        <p class="lead text-white">Small Project on machine learning and data science</p>
       </div>
     </div>
 
@@ -83,7 +89,7 @@
                  <br>
                   <div class="d-flex justify-content-between align-items-center">
                    <div class="btn-group">
-                      <a href="/newsclf">
+                      <a href="/news/">
                         <button type="button" class="btn btn-sm btn btn-warning">News Classifier</button>
                       </a>
                     </div>

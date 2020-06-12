@@ -28,3 +28,6 @@ def summarize(request):
 		print(message)		
 		return render(request,'Summarize.html',{'original':value,'prediction':message})
 	return render(request,'Summarize.html')
+
+def news(request):
+	return render(request,'News.html')
