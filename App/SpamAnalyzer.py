@@ -3,7 +3,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.model_selection import train_test_split
 
-df = pd.read_csv('App/Spam.csv')
+df = pd.read_csv('App/Files/Spam.csv')
 df.rename(columns={"v1":"labels","v2":"messages"},inplace=True)
 df.drop(['Unnamed: 2','Unnamed: 3','Unnamed: 4'],axis=1,inplace=True)
 df['label'] = df['labels'].map({'ham':0,'spam':1})

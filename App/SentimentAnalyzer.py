@@ -7,7 +7,7 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
 
-text = open('App/read.txt', encoding='utf-8').read()
+text = open('App/Files/read.txt', encoding='utf-8').read()
 lower_case = text.lower()
 cleaned_text = lower_case.translate(str.maketrans('', '', string.punctuation))
 
@@ -27,7 +27,7 @@ for word in final_words:
     lemma_words.append(word)
 
 emotion_list = []
-with open('App/emotions.txt', 'r') as file:
+with open('App/Files/emotions.txt', 'r') as file:
     for line in file:
         clear_line = line.replace("\n", '').replace(",", '').replace("'", '').strip()
         word, emotion = clear_line.split(':')

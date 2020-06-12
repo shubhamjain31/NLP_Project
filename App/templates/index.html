@@ -2,7 +2,15 @@
 {% load static %}
 
 {% block title%} NLP Project{% endblock %}
-{% block css %}{% endblock %}
+{% block css %}
+<style type="text/css">
+#card {
+        margin: 0 auto; 
+        float: none; 
+        margin-bottom: 10px; 
+}
+</style>
+{% endblock %}
 
 
 {% block body %}
@@ -67,7 +75,7 @@
               </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-4 center" id="card">
               <div class="card mb-4 box-shadow">
                 <img class="card-img-top" src="{% static 'images/news.jpg' %}" alt="Card image cap" style="height: 250px;">
                 <div class="card-body">
