@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from App import SentimentAnalyzer, SpamAnalyzer, TextSummarizer
+from App import SentimentAnalyzer, SpamAnalyzer, TextSummarizer, Resume
 
 # Create your views here.
 
@@ -29,5 +29,15 @@ def summarize(request):
 		return render(request,'Summarize.html',{'original':value,'prediction':message})
 	return render(request,'Summarize.html')
 
-def news(request):
-	return render(request,'News.html')
+def resumeparser(request):
+	if request.method == 'POST':
+		value = request.FILES['filename']
+		file_path = 'App/Files/'+str(value)
+
+		# calling above function and extracting text
+		text = ''
+		for page in Resume.extract_text_from_pdf(file_path):
+		    text += ' ' + page
+		message = Resume.extract_skills(text)
+		return render(request,'Resume.html',{'message':message})
+	return render(request,'Resume.html')

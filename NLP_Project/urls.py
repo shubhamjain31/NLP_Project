@@ -23,5 +23,5 @@ urlpatterns = [
     path('spam/', views.spam, name='spam'),
     path('sentiment/', views.sentiment, name='sentiment'),
     path('summarize/', views.summarize, name='summarize'),
-    path('news/', views.news, name='news'),
+    path('resumeparser/', views.resumeparser, name='resumeparser'),
 ]
