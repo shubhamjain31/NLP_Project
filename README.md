@@ -1,6 +1,6 @@
 # NLP_Project  
 
-This repository consist of different types of tasks:  
+In this ***machine learning*** and ***NLP*** project, this repository consist of following tasks:  
 * Sentiment Analysis  
 * Text Summarization  
 * Spam Classification
